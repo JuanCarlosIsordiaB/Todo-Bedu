@@ -1,7 +1,8 @@
 
 
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import { LoginPage } from '../login/LoginPage';
+import { TodoApp } from '../08-useReducer/TodoApp';
 
 export const AppRouter = () => {
   return (
@@ -9,8 +10,9 @@ export const AppRouter = () => {
 
         {/* Login  */}
         <Route path='login' element={ <LoginPage/>}/>
+        <Route path='todo' element={ <TodoApp/>}/>
 
-        <Route pat='/*' element={ <LoginPage/>}/>
+        <Route pat='/*' element={ <Navigate to='/login'/>}/>
 
     </Routes>
   )
